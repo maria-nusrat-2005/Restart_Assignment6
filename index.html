@@ -20,7 +20,7 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body class="font-sans bg-gray-200">
+  <body class="font-sans">
     <!-- navbar -->
     <header>
       <div class="navbar bg-base-100 shadow-lg">
@@ -47,17 +47,25 @@
               class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <li><a class="hover:text-purple-700">Home</a></li>
-              <li><a class="hover:text-purple-700">Products</a></li>
+              <li>
+                <a onclick="goToProducts()" class="hover:text-purple-700"
+                  >Products</a
+                >
+              </li>
               <li><a class="hover:text-purple-700">About</a></li>
               <li><a class="hover:text-purple-700">Contact</a></li>
             </ul>
           </div>
-          <a class="text-xl text-blue-700 font-bold">SwiftCart</a>
+          <a class="text-xl text-purple-700 font-bold">SwiftCart</a>
         </div>
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal px-1">
             <li><a class="hover:text-purple-700">Home</a></li>
-            <li><a class="hover:text-purple-700">Products</a></li>
+            <li>
+              <a onclick="goToProducts()" class="hover:text-purple-700"
+                >Products</a
+              >
+            </li>
             <li><a class="hover:text-purple-700">About</a></li>
             <li><a class="hover:text-purple-700">Contact</a></li>
           </ul>
@@ -82,119 +90,6 @@
         <button class="btn btn-primary">Shop Now</button>
       </div>
     </section>
-    <section>
-      <h2 class="text-5xl font-bold text-center mt-17">Why Choose Us</h2>
-      <p class="text-center mt-4 text-gray-600">
-        We Provide The Best Shopping Experience With Fast Delivery, Quality
-        Products, and Excellent Customer Service.
-      </p>
-      <div class="flex flex-col md:flex-row max-w-1024">
-        <div class="card bg-white m-16 p-8 relative shadow-lg">
-          <button
-            class="btn p-5 shadow-lg border border-1 border-white w-10 bg-purple-100 absolute -top-3 -left-0.1"
-          >
-            <i class="fa-solid fa-car"></i>
-          </button>
-          <h3 class="text-xl font-semibold mt-4">Fast Delivery</h3>
-          <p class="mt-2 text-gray-500">
-            Get your products delivered quickly and efficiently.
-          </p>
-        </div>
-        <div class="card bg-white m-16 p-8 relative shadow-lg">
-          <button
-            class="btn p-5 shadow-lg border border-1 border-white w-10 bg-purple-100 absolute -top-3 -left-0.1"
-          >
-            <i class="fa-solid fa-headphones"></i>
-          </button>
-          <h3 class="text-xl font-semibold mt-4">24/7 Support</h3>
-          <p class="mt-2 text-gray-500">
-            Our support team is available around the clock.
-          </p>
-        </div>
-        <div class="card bg-white m-16 p-8 relative shadow-lg">
-          <button
-            class="btn p-5 shadow-lg border border-1 border-white w-10 bg-purple-100 absolute -top-3 -left-0.1"
-          >
-            <i class="fa-solid fa-lock"></i>
-          </button>
-          <h3 class="text-xl font-semibold mt-4">Secure Payment</h3>
-          <p class="mt-2 text-gray-500">
-            Your payment information is secure and protected.
-          </p>
-        </div>
-        <div class="card bg-white m-16 p-8 relative shadow-lg">
-          <button
-            class="btn p-5 shadow-lg border border-1 border-white w-10 bg-purple-100 absolute -top-3 -left-0.1"
-          >
-            <i class="fa-solid fa-arrows-rotate"></i>
-          </button>
-          <h3 class="text-xl font-semibold mt-4">Easy Returns</h3>
-          <p class="mt-2 text-gray-500">
-            Return items easily within the return period.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact">
-      <div
-        class="footer sm:footer-horizontal bg-gray-600 text-base-content p-10"
-      >
-        <nav>
-          <h6 class="text-3xl font-bold text-blue-400">SwiftCart</h6>
-          <p class="text-white">
-            Lorem ipsum dolor sit amet, consectetur<br />
-            adipisicing elit. Molestiae deserunt sapiente optio,<br />
-            dolores iusto expedita at amet quisquam odio aut.
-          </p>
-        </nav>
-        <nav>
-          <h6 class="footer-title text-gray-300">Quick Links</h6>
-          <a class="link link-hover text-white">Home</a>
-          <a class="link link-hover text-white">Products</a>
-          <a class="link link-hover text-white">About us</a>
-          <a class="link link-hover text-white">Contact</a>
-        </nav>
-        <nav>
-          <h6 class="footer-title text-gray-300">Support</h6>
-          <a class="link link-hover text-white">FAQ</a>
-          <a class="link link-hover text-white">Shipping</a>
-          <a class="link link-hover text-white">return</a>
-          <a class="link link-hover text-white">Privacy Policy</a>
-        </nav>
-        <div>
-          <h6 class="footer-title text-gray-300">Newsletter</h6>
-          <fieldset class="w-80">
-            <p class="text-white pb-2">
-              The latest news, articles and resources sent your inbox weekly
-            </p>
-            <div class="join">
-              <input
-                type="text"
-                placeholder="username@site.com"
-                class="input input-bordered join-item"
-              />
-              <button class="btn btn-primary join-item">Subscribe</button>
-            </div>
-          </fieldset>
-        </div>
-      </div>
-      <footer class="bg-gray-600">
-        <div class="flex justify-between px-10 pb-5">
-          <div>
-            <p class="text-center text-gray-400">
-              &copy; 2025 SwiftCart. All rights reserved.
-            </p>
-          </div>
-          <div class="flex gap-2">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"> <i class="fa-brands fa-twitter"></i></a>
-            <a href="#"> <i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#"><i class="fa-solid fa-envelope"></i></a>
-          </div>
-        </div>
-      </footer>
-    </section>
+    <script src="./index.js"></script>
   </body>
 </html>
