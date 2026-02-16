@@ -24,12 +24,37 @@
     <section>
       <h2 class="text-3xl font-bold text-center">Our Products</h2>
 
-      <div id="product-container" class="flex gap-2 bg- justify-center">
+      <div
+        id="product-container"
+        class="md:flex flex-cols gap-2 md:justify-center items-center"
+      >
         <div>
-          <button class="btn btn-primary mt-10 p-4 rounded-lg">All</button>
+          <button
+            onclick="loadProducts()"
+            class="btn btn-primary mt-10 p-4 rounded-lg"
+          >
+            All
+          </button>
         </div>
       </div>
+    </section>
+    <section class="bg-gray-300 p-5 m-12">
+      <div
+        id="allProducts-container"
+        class="grid grid-cols-1 md:grid-cols-3 gap-4"
+      ></div>
     </section>
     <script src="./index.js"></script>
   </body>
 </html>
+
+<!-- "id": 1,
+"title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+"price": 109.95,
+"description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+"category": "men's clothing",
+"image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
+"rating": {
+"rate": 3.9,
+"count": 120
+} -->
