@@ -60,7 +60,7 @@ const displayLoadProducts = (products) => {
           />
           <div class="flex gap-3 justify-between items-center">
             <button
-              class="btn p-1 py-1 rounded-lg bg-purple-100 text-purple-500"
+              class="px-3 rounded-xl bg-purple-100 text-purple-500"
             >
               ${x.category}
             </button>
@@ -88,14 +88,20 @@ const displayProducts = (products) => {
     console.log(product);
     const div = document.createElement("div");
     div.innerHTML = `<div class="mt-10">   
-          <button 
- class="btn border border-1 border-blue-500 p-4 rounded-lg">${product}
+          <button onclick="displayProductByCategory(${product})" class="btn border border-1 border-blue-500 p-4 rounded-lg">${product}
 </button>
 
         </div>`;
 
     productContainer.append(div);
   });
+};
+const displayProductByCategory = (category) => {
+  console.log(category);
+  const url = `https://fakestoreapi.com/products/category/${category}`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => console.log(data));
 };
 
 // loadCategoryProducts();
