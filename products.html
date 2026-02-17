@@ -20,6 +20,65 @@
       referrerpolicy="no-referrer"
     />
   </head>
+  <header>
+    <div class="navbar bg-base-100 shadow-lg">
+      <div class="navbar-start">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </div>
+          <ul
+            tabindex="-1"
+            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+          >
+            <li>
+              <a onclick="goToProducts2()" class="hover:text-purple-700"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a onclick="goToProducts()" class="hover:text-purple-700"
+                >Products</a
+              >
+            </li>
+            <li><a class="hover:text-purple-700">About</a></li>
+            <li><a class="hover:text-purple-700">Contact</a></li>
+          </ul>
+        </div>
+        <a class="text-xl text-purple-700 font-bold">SwiftCart</a>
+      </div>
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1">
+          <li>
+            <a onclick="goToProducts2()" class="hover:text-purple-700">Home</a>
+          </li>
+          <li>
+            <a onclick="goToProducts()" class="hover:text-purple-700"
+              >Products</a
+            >
+          </li>
+          <li><a class="hover:text-purple-700">About</a></li>
+          <li><a class="hover:text-purple-700">Contact</a></li>
+        </ul>
+      </div>
+      <div class="navbar-end">
+        <a class="btn"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
+    </div>
+  </header>
   <body class="font-sans">
     <section>
       <h2 class="text-3xl font-bold text-center">Our Products</h2>
@@ -38,23 +97,33 @@
         </div>
       </div>
     </section>
-    <section class="bg-gray-300 p-5 m-12">
+    <section class="bg-gray-50 p-5 m-12">
       <div
         id="allProducts-container"
         class="grid grid-cols-1 md:grid-cols-3 gap-4"
-      ></div>
+      >
+        <h3 class="text-center text-3xl font-bold">Loading...</h3>
+      </div>
+    </section>
+    <!-- modal -->
+    <section>
+      <!-- Open the modal using ID.showModal() method -->
+      <!-- <button class="btn" onclick="">open modal</button> -->
+      <dialog id="products_modal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box bg-gray-100">
+          <div
+            id="details-container"
+            class="border-1 space-y-3 border-blue-300 shadow-lg p-5"
+          ></div>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </section>
     <script src="./index.js"></script>
   </body>
 </html>
-
-<!-- "id": 1,
-"title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-"price": 109.95,
-"description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-"category": "men's clothing",
-"image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
-"rating": {
-"rate": 3.9,
-"count": 120
-} -->

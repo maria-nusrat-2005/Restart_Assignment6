@@ -1,6 +1,9 @@
 function goToProducts() {
   window.location.href = "products.html";
 }
+function goToProducts2() {
+  window.location.href = "index.html";
+}
 const loadLevel = () => {
   //   console.log(categories);
 
@@ -22,7 +25,25 @@ const loadProducts = () => {
       displayLoadProducts(data);
     });
 };
-//for all products
+const loadProductDetail = async (id) => {
+  const url = `https://fakestoreapi.com/products/${id}`;
+
+  console.log(url);
+  const res = await fetch(url);
+  const details = await res.json();
+  displayLoadProductDetails(details);
+};
+
+const displayLoadProductDetails = (pro) => {
+  console.log(pro);
+  const detailsBox = document.getElementById("details-container");
+  detailsBox.innerHTML = `<h2 class="font-bold text-2xl">${pro.title}</h2>
+  <p>${pro.description}</p>
+  <p class="font-bold">$${pro.price}</p>
+   <button class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i>Add to Cart</button>`;
+  document.getElementById("products_modal").showModal();
+};
+//for all product
 const displayLoadProducts = (products) => {
   console.log(products);
   const allProductsContainer = document.getElementById("allProducts-container");
@@ -31,9 +52,9 @@ const displayLoadProducts = (products) => {
   products.forEach((x) => {
     console.log(x);
     allProductsContainer.innerHTML += `
-    <div class="bg-white space-y-3 p-3">
+    <div class="bg-white shadow-lg space-y-3 p-3">
           <img
-            class="flex justify-center items-center h-96"
+            class="h-60 mx-auto object-contain"
             src="${x.image}"
             alt=""
           />
@@ -45,10 +66,10 @@ const displayLoadProducts = (products) => {
             </button>
             <p class=""><i class="fa-solid fa-star"></i>${x.rating.rate} (${x.rating.count})</p>
           </div>
-          <h3 class="text-2xl font-bold">${x.title}</h3>
-          <p>Lorem ipsum dolor sit.</p>
+          <h3 class="text-2xl font-semibold">${x.title}</h3>
+          <p class="font-bold">$${x.price}</p>
           <div class="flex justify-between">
-            <button class="btn"><i class="fa-regular fa-eye"></i>Details</button>
+            <button onclick="loadProductDetail(${x.id})" class="btn"><i class="fa-regular fa-eye"></i>Details</button>
             <button class="btn btn-primary">
               <i class="fa-solid fa-cart-shopping"></i>Add
             </button>
@@ -65,14 +86,17 @@ const displayProducts = (products) => {
 
   products.forEach((product) => {
     console.log(product);
-
     const div = document.createElement("div");
     div.innerHTML = `<div class="mt-10">   
-          <button class="btn border border-1 border-blue-500 p-4 rounded-lg">${product}
+          <button 
+ class="btn border border-1 border-blue-500 p-4 rounded-lg">${product}
 </button>
 
         </div>`;
+
     productContainer.append(div);
   });
 };
+
+// loadCategoryProducts();
 loadLevel();
