@@ -3,13 +3,14 @@
    undefined: ভারিয়াবল আছে কিন্তু কোন মান সেট করা নেই।
 
 2. What is the use of the map() function in JavaScript? How is it different from forEach()?
+Ans: map()--> নতুন অ্যারে রিটার্ন করে। forEach() অ্যারে এর প্রতিটা এলিমেন্ট ট্রাভার্স করে কোন একটা কাজ করা হয় (ফাংশন) ।
 
 3. What is the difference between == and ===?
    And: Double equal (==) -->টাইপ রুপান্তর করে ফেলে।(২=="২") এখানে স্ট্রিং ২ কে ইন্টেজার ২ এ রুপান্তর করে আউটপুট দেখায় সত্য।
    Triple equal(===)--> টাইপ রুপান্তর করেনা। (২=="২") স্ট্রিং ২ কে স্ট্রিং এই রাখে এবং আউটপুট দেখায় মিথ্যা। এটি (==) এর চেয়ে বেশি দক্ষ এবং শক্তিশালী।
 
 4. What is the significance of async/await in fetching API data?
-   Ans: async and await are used to handle asynchronous operations like API calls in a simple, readable way.
+   Ans: async await are ব্যবহার করা হয় asynchronous operations হ্যন্ডেল করার জন্য যেমন API কল   
 
 5. Explain the concept of Scope in JavaScript (Global, Function, Block).
    Ans: Global Scope:ফাংশন এর বাইরে ভারিয়াবল ডিক্লেয়ার করে।

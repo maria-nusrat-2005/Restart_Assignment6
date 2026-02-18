@@ -79,29 +79,60 @@ const displayLoadProducts = (products) => {
   });
 };
 // loadProducts();
+// const displayProducts = (products) => {
+//   console.log(products);
+//   // 1.get the container and empty string
+//   const productContainer = document.getElementById("product-container");
+
+//   products.forEach((product) => {
+//     console.log(product);
+//     const div = document.createElement("div");
+//     div.innerHTML = `<div class="mt-10">
+//           <button onclick="()=>{console.log(this.product)}" class="btn border border-1 border-blue-500 p-4 rounded-lg">${product}
+// </button>
+
+//         </div>`;
+
+//     productContainer.append(div);
+//   });
+// };
+// const displayProductByCategory = (category) => {
+//   console.log(category);
+//   const url = `https://fakestoreapi.com/products/category/${category}`;
+//   fetch(url)
+//     .then((res) => res.json())
+//     .then((data) => console.log(data));
+// };
 const displayProducts = (products) => {
-  console.log(products);
-  // 1.get the container and empty string
   const productContainer = document.getElementById("product-container");
 
-  products.forEach((product) => {
-    console.log(product);
+  products.forEach((category) => {
     const div = document.createElement("div");
-    div.innerHTML = `<div class="mt-10">   
-          <button onclick="displayProductByCategory(${product})" class="btn border border-1 border-blue-500 p-4 rounded-lg">${product}
-</button>
 
-        </div>`;
+    div.innerHTML = `
+      <div class="mt-10">   
+        <button 
+          onclick="displayProductByCategory('${category.replace(/'/g, "\\'")}')"
+
+          class="btn border border-1 border-blue-500 p-4 rounded-lg">
+          ${category}
+        </button>
+      </div>
+    `;
 
     productContainer.append(div);
   });
 };
+
 const displayProductByCategory = (category) => {
-  console.log(category);
-  const url = `https://fakestoreapi.com/products/category/${category}`;
+  const url = `https://fakestoreapi.com/products/category/${encodeURIComponent(category)}`;
+
+  console.log("Category:", category);
+  console.log("URL:", url);
+
   fetch(url)
     .then((res) => res.json())
-    .then((data) => console.log(data));
+    .then((data) => displayLoadProducts(data));
 };
 
 // loadCategoryProducts();
